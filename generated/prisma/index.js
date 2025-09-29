@@ -125,7 +125,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/first/Desktop/project/murasaki-backend/generated/prisma",
+      "value": "/Users/lynchz/Desktop/capstone/demo/murasaki-elysia-poc/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -139,7 +139,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/Users/first/Desktop/project/murasaki-backend/prisma/schema.prisma",
+    "sourceFilePath": "/Users/lynchz/Desktop/capstone/demo/murasaki-elysia-poc/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {

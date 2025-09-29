@@ -11,8 +11,10 @@
     "prismabox": "^1.1.25"
   },
   "devDependencies": {
+    "@vitest/ui": "3.2.4",
     "bun-types": "latest",
-    "prisma": "^6.16.2"
+    "prisma": "^6.16.2",
+    "vitest": "^3.2.4"
   },
   "module": "src/index.js"
 }
