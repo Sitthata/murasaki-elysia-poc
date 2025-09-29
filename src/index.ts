@@ -1,7 +1,17 @@
 import { Elysia } from "elysia";
+import { routes } from "./routes";
+import { PrismaClient } from "@prisma/client";
 
-const app = new Elysia().get("/", () => "Hello Elysia").listen(3000);
+const PORTNUMBER = 8080;
 
-console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
-);
+export const prisma = new PrismaClient();
+
+const app = new Elysia()
+  .use(routes)
+  .listen(PORTNUMBER);
+
+console.log(`Server running at http://localhost:${PORTNUMBER}`);
+
+process.on('beforeExit', async () => {
+  await prisma.$disconnect();
+});
