@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
 }
 
 datasource db {
@@ -13,7 +12,6 @@ generator prismabox {
   typeboxImportDependencyName = "elysia"
   typeboxImportVariableName   = "t"
   inputModel                  = true
-  output                      = "../generated/prismabox"
 }
 
 model Todo {
