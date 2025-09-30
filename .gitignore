@@ -43,4 +43,4 @@ package-lock.json
 /src/generated/prisma
 
 # prisma
-/generated/
+prismabox/
