@@ -2,9 +2,9 @@ import Elysia, { t } from "elysia";
 import { prisma } from "src";
 
 export const routes = new Elysia({ prefix: "/api" })
-  // .get("/todos", () => {
-  //   return [{ id: 1, text: "Learn Elysia", completed: false }];
-  // })
+  .get("/todos", () => {
+    return [{ id: 1, text: "Learn Elysia", completed: false }];
+  })
   .post(
     "/todo",
     async ({ body, set }) => {
