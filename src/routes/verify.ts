@@ -58,7 +58,7 @@ This rubric assesses a user's prompt based on four weighted criteria. The total 
 * **Needs Improvement (Score: 1):** The prompt directly asks for the complete, final answer, outsourcing the entire problem-solving process. (e.g., "Write the complete code...").
 `;
   const completion = await openai.chat.completions.create({
-    model: "openai/gpt-oss-20b:free",
+    model: "qwen/qwen2.5-vl-32b-instruct:free",
     messages: [
       {
         role: "system",
@@ -69,6 +69,7 @@ This rubric assesses a user's prompt based on four weighted criteria. The total 
         content: `Please evaluate the following text:\n\n---TEXT---\n${prompt}\n\n---RUBRIC---\n${promptEvaluationRubric}`,
       },
     ],
+    reasoning_effort: "high",
     response_format: { type: "json_object" },
   });
   return completion.choices[0].message.content;
@@ -77,12 +78,13 @@ This rubric assesses a user's prompt based on four weighted criteria. The total 
 export const routes = new Elysia({ prefix: "/api" }).post(
   "/verify",
   async ({ body }) => {
+    console.log("Hit me");
     const response = await getChatCompletion(body.prompt);
     return response;
   },
   {
     body: t.Object({
-        prompt: t.String()
-    })
+      prompt: t.String(),
+    }),
   }
 );
