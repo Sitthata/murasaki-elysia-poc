@@ -1,5 +1,5 @@
 import { Elysia } from "elysia";
-import { routes } from "./routes";
+import { routes } from "./routes/verify";
 import { PrismaClient } from "@prisma/client";
 
 const PORTNUMBER = 8080;
